@@ -72,17 +72,6 @@ apt install -y docker-ce docker-ce-cli containerd.io
 echo ''
 echo ''
 
-# Test Docker Install
-echo ''
-echo ''
-sleep 2
-echo ' ********    Test Docker With Hello World    ********'
-echo ''
-echo ''
-sleep 3
-
-docker run hello-world
-
 sleep 5
 
 echo ''
