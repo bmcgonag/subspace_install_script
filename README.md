@@ -1,4 +1,6 @@
-# Subspace / Wireguard BASH Installation Script
+# This is deprecated. Subspace generally no longer appears to work properly in many cases.  
+
+### Subspace / Wireguard BASH Installation Script
 
 This script is made to install wireguard, docker, and the subspace docker image / container onto a Ubuntu 18.04 or later server.
 
