@@ -93,14 +93,17 @@ echo 'Give your domain name (FQDN) or IP address for your subspace server:'
 read subspaceName
 
 docker create \
---name subspace \
---restart always \
---network host \
---cap-add NET_ADMIN \
---volume /usr/bin/wg:/usr/bin/wg \
---volume /data:/data \
---env SUBSPACE_HTTP_HOST=$subspaceName \
-subspacecloud/subspace:latest
+    --name subspace \
+    --restart always \
+    --network host \
+    --cap-add NET_ADMIN \
+    --volume /usr/bin/wg:/usr/bin/wg \
+    --volume /data:/data \
+    --volume /lib/x86_64-linux-gnu/libc.so.6:/lib/x86_64-linux-gnu/libc.so.6:ro \
+    --volume /lib64/ld-linux-x86-64.so.2:/lib64/ld-linux-x86-64.so.2:ro \
+    --env SUBSPACE_HTTP_HOST=$subspaceName \
+    --env SUBSPACE_NAMESERVER="1.1.1.1" \
+    subspacecommunity/subspace:latest
 
 sleep 3
 echo ''
